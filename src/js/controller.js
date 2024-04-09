@@ -124,6 +124,10 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
+function newFeature() {
+  console.log('welcome');
+}
+
 const init = function () {
   bookmarkView.render(model.state.bookmarks);
   recipeView.addHandlerRender(controlRecipe);
@@ -132,6 +136,7 @@ const init = function () {
   recipeView.addHandlerUpdateServings(controlServings);
   recipeView.addHandlerBookmark(controlAddBookmark);
   addRecipeView.addHandlerUpload(controlAddRecipe);
+  newFeature();
 };
 init();
 
