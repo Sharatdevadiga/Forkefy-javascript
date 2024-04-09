@@ -47,7 +47,6 @@ const controlRecipe = async function () {
 const controlSearchResults = async function () {
   try {
     resultsView.renderSpinner();
-    console.log(resultsView);
 
     // 1. set search query
     const query = searchView.getQuery();
@@ -57,14 +56,12 @@ const controlSearchResults = async function () {
     await model.loadSearchResults(query);
 
     // 3. render search result
-    console.log(model.state.search.result);
+
     resultsView.render(model.getSearchResultsPage());
 
     // 4. render initial pagination button
     paginationview.render(model.state.search);
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };
 
 const controlPagination = function (gotoPage) {
